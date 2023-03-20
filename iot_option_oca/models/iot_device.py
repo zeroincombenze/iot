@@ -9,10 +9,7 @@ from odoo.tools.safe_eval import safe_eval
 class IotDevice(models.Model):
     _inherit = "iot.device"
 
-    option_ids = fields.One2many(
-        "iot.device.option",
-        inverse_name="device_id",
-    )
+    option_ids = fields.One2many("iot.device.option", inverse_name="device_id",)
 
 
 class IotDeviceOption(models.Model):
@@ -31,17 +28,12 @@ class IotDeviceOption(models.Model):
 
     device_id = fields.Many2one("iot.device", required=True)
     property_id = fields.Many2one(
-        comodel_name="iot.device.property",
-        required=True,
-        string="Property",
+        comodel_name="iot.device.property", required=True, string="Property",
     )
     sequence = fields.Integer(index=True)
     name = fields.Char(related="property_id.name")
     field_type = fields.Selection(related="property_id.field_type")
-    widget = fields.Selection(
-        related="property_id.widget",
-        readonly=True,
-    )
+    widget = fields.Selection(related="property_id.widget", readonly=True,)
     field_name = fields.Char(
         compute="_compute_field_name",
         help="Technical name of the field where the value is stored.",
@@ -85,9 +77,7 @@ class IotDeviceOption(models.Model):
         """Write the value correctly converted in the typed field."""
         for record in self:
             record[record.field_name] = self._transform_value(
-                record.value,
-                record.field_type,
-                record.property_id,
+                record.value, record.field_type, record.property_id,
             )
 
     @api.constrains(
@@ -145,7 +135,7 @@ class IotDeviceOption(models.Model):
             value = self.env["custom.info.option"].search(
                 [
                     ("property_ids", "in", properties.ids),
-                    ("name", "ilike", "%{}%".format(value)),
+                    ("name", "ilike", u"%{}%".format(value)),
                 ],
                 limit=1,
             )

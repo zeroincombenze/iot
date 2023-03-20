@@ -1,15 +1,15 @@
 
-[![Runboat](https://img.shields.io/badge/runboat-Try%20me-875A7B.png)](https://runboat.odoo-community.org/builds?repo=OCA/iot&target_branch=14.0)
-[![Pre-commit Status](https://github.com/OCA/iot/actions/workflows/pre-commit.yml/badge.svg?branch=14.0)](https://github.com/OCA/iot/actions/workflows/pre-commit.yml?query=branch%3A14.0)
-[![Build Status](https://github.com/OCA/iot/actions/workflows/test.yml/badge.svg?branch=14.0)](https://github.com/OCA/iot/actions/workflows/test.yml?query=branch%3A14.0)
-[![codecov](https://codecov.io/gh/OCA/iot/branch/14.0/graph/badge.svg)](https://codecov.io/gh/OCA/iot)
-[![Translation Status](https://translation.odoo-community.org/widgets/iot-14-0/-/svg-badge.svg)](https://translation.odoo-community.org/engage/iot-14-0/?utm_source=widget)
+[![Runboat](https://img.shields.io/badge/runboat-Try%20me-875A7B.png)](https://runboat.odoo-community.org/builds?repo=OCA/iot&target_branch=12.0)
+[![Pre-commit Status](https://github.com/OCA/iot/actions/workflows/pre-commit.yml/badge.svg?branch=12.0)](https://github.com/OCA/iot/actions/workflows/pre-commit.yml?query=branch%3A12.0)
+[![Build Status](https://github.com/OCA/iot/actions/workflows/test.yml/badge.svg?branch=12.0)](https://github.com/OCA/iot/actions/workflows/test.yml?query=branch%3A12.0)
+[![codecov](https://codecov.io/gh/OCA/iot/branch/12.0/graph/badge.svg)](https://codecov.io/gh/OCA/iot)
+[![Translation Status](https://translation.odoo-community.org/widgets/iot-12-0/-/svg-badge.svg)](https://translation.odoo-community.org/engage/iot-12-0/?utm_source=widget)
 
 <!-- /!\ do not modify above this line -->
 
-# iot
+# Internet of Things modules
 
-Internet Of Thing modules
+None
 
 <!-- /!\ do not modify below this line -->
 
@@ -21,14 +21,12 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[iot_amqp_oca](iot_amqp_oca/) | 14.0.1.0.0 |  | Integrate Iot Outputs with AMQP
-[iot_input_oca](iot_input_oca/) | 14.0.1.0.1 | [![etobella](https://github.com/etobella.png?size=30px)](https://github.com/etobella) | IoT Input module
-[iot_key_employee_rfid](iot_key_employee_rfid/) | 14.0.1.0.0 |  | Use an Employee RFID Card as an IoT Key
-[iot_oca](iot_oca/) | 14.0.1.0.0 |  | IoT base module
-[iot_option_oca](iot_option_oca/) | 14.0.1.0.0 |  | Allow to define custom field for IoT
-[iot_output_oca](iot_output_oca/) | 14.0.1.0.2 |  | IoT allow multiple outputs
-[iot_rule](iot_rule/) | 14.0.1.0.1 |  | Define IoT Rules (Keys that control Inputs)
-[iot_template_oca](iot_template_oca/) | 14.0.1.0.1 |  | IoT module for managing templates
+[iot](iot/) | 12.0.1.3.1 |  | IoT base module
+[iot_amqp](iot_amqp/) | 12.0.1.1.1 |  | Integrate Iot Outputs with AMQP
+[iot_input](iot_input/) | 12.0.1.4.2 | [![etobella](https://github.com/etobella.png?size=30px)](https://github.com/etobella) | IoT Input module
+[iot_option_oca](iot_option_oca/) | 12.0.1.0.0 |  | Allow to define custom field for IoT
+[iot_output](iot_output/) | 12.0.1.1.1 |  | IoT allow multiple outputs
+[iot_template_oca](iot_template_oca/) | 12.0.1.0.0 |  | IoT module for managing templates
 
 [//]: # (end addons)
 

@@ -2,13 +2,13 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 {
     "name": "IoT Templates",
-    "version": "14.0.1.0.1",
+    "version": "12.0.1.0.0",
     "category": "IoT",
     "author": "Creu Blanca, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "installable": True,
     "summary": "IoT module for managing templates",
-    "depends": ["iot_input_oca", "iot_output_oca"],
+    "depends": ["iot_input"],
     "website": "https://github.com/OCA/iot",
     "data": [
         "security/ir.model.access.csv",

@@ -7,10 +7,8 @@ from odoo.tests.common import HttpCase
 class TestIotTemplate(HttpCase):
     def setUp(self):
         super(TestIotTemplate, self).setUp()
-        self.system = self.env["iot.communication.system"].create({"name": "Testing"})
-        self.system_2 = self.env["iot.communication.system"].create(
-            {"name": "Testing 2"}
-        )
+        self.system = self.env["iot.system"].create({"name": "Testing"})
+        self.system_2 = self.env["iot.system"].create({"name": "Testing 2"})
         self.property = self.env["iot.device.property"].create(
             {"name": "Prop1", "tech_name": "prop_1", "widget": "char"}
         )
@@ -41,11 +39,7 @@ class TestIotTemplate(HttpCase):
                     )
                 ],
                 "output_ids": [
-                    (
-                        0,
-                        0,
-                        {"name": "OUTPUT 1", "communication_system_id": self.system.id},
-                    )
+                    (0, 0, {"name": "OUTPUT 1", "system_id": self.system.id},)
                 ],
             }
         )
@@ -74,8 +68,7 @@ class TestIotTemplate(HttpCase):
         )
         self.assertTrue(input1)
         res = self.url_open(
-            "/iot/%s/action" % input1.serial,
-            data={"passphrase": input1.passphrase},
+            "/iot/%s/action" % input1.serial, data={"passphrase": input1.passphrase},
         )
         json_res = res.json()
         self.assertEqual(json_res["status"], "ok")
@@ -87,16 +80,14 @@ class TestIotTemplate(HttpCase):
         self.assertTrue(option)
         option.value = True
         res = self.url_open(
-            "/iot/%s/action" % input1.serial,
-            data={"passphrase": input1.passphrase},
+            "/iot/%s/action" % input1.serial, data={"passphrase": input1.passphrase},
         )
         json_res = res.json()
         self.assertEqual(json_res["status"], "ok")
         self.assertEqual(json_res["prop_2"], True)
         self.assertEqual(json_res["prop_1"], "Hello")
         res = self.url_open(
-            "/iot/%s/action" % input1.serial,
-            data={"passphrase": input1.passphrase},
+            "/iot/%s/action" % input1.serial, data={"passphrase": input1.passphrase},
         )
         json_res = res.json()
         self.assertEqual(json_res["status"], "ok")
